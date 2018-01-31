@@ -195,6 +195,8 @@ void create_end_state(int *inlet,int *outlet){
 void show_state(){
         int i;
 
+	printf("-[state]-[next1]-[next2]-\n")
+
         for(i = 0;i < 100;i++){
 
                 printf("[%3d]",i);
@@ -219,9 +221,9 @@ int main(void){
         int inlet;
         int outlet;
 
-        strcpy(regexp_str,"ab|cd*"); //NO
+        //strcpy(regexp_str,"ab|cd*"); //OK
 	//strcpy(regexp_str,"a*"); //OK
-        //strcpy(regexp_str,"ab*");
+        strcpy(regexp_str,"ab*"); //OK
 
         init_first_char();
 
