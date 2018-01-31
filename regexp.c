@@ -195,7 +195,7 @@ void create_end_state(int *inlet,int *outlet){
 void show_state(){
         int i;
 
-	printf("-[state]-[next1]-[next2]-\n")
+	printf("-[state]-[next1]-[next2]-\n");
 
         for(i = 0;i < 100;i++){
 
