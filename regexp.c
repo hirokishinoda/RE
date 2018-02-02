@@ -86,7 +86,9 @@ void regexp(int *inlet,int *outlet){
         state_table[n].next2 = inlet2;
 
         state_table[*outlet].next1 = m;
-        state_table[*outlet].next2 = m;
+        if(state_table[*outlet].next2 == 0){
+		state_table[*outlet].next2 = m;
+	}
 
         state_table[outlet2].next1 = m;
 	if(state_table[outlet2].next2 == 0){
@@ -223,7 +225,10 @@ int main(void){
 
         //strcpy(regexp_str,"ab|cd*"); //OK
 	//strcpy(regexp_str,"a*"); //OK
-        strcpy(regexp_str,"ab*"); //OK
+        //strcpy(regexp_str,"ab*"); //OK
+
+	printf("input regexp -> ");
+	scanf("%s",&regexp_str);
 
         init_first_char();
 
